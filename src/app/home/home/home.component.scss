@@ -1,0 +1,43 @@
+.matcard {
+  height: 90px;
+  margin: 10px;
+  color: white;
+  text-align: center;
+  transition: transform 250ms;
+}
+
+.primary {
+  background-color: #0096bb !important;
+  color: white;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.main {
+ overflow: hidden;
+  overflow-x: hidden;
+  height:100%;
+  background-color: #DCDCDC;
+  padding: 20px;
+}
+
+.active {
+  background-image: linear-gradient(45deg, #9b3cb7, #ff396f);
+}
+.white{
+    background-color: white;
+}
+.textalign{
+    margin-top: 20px !important;
+}
+.floatright{
+    float: right;
+}  
+  .matcard:hover {
+    transform: translateY(-10px);
+  }
+  .blkcolor{
+      color: black;
+  }

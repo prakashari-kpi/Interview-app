@@ -1,0 +1,54 @@
+<div class="main">
+    <br>
+    <br>
+  <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2 white">
+        <mat-form-field class="example-full-width">
+            <input type="number" (ngModelChange)="configureCardList($event)" [(ngModel)]="maxRows" matInput placeholder="Max rows" >
+          </mat-form-field>
+    </div>
+    <div class="col-md-5">
+        <div class="floatright">
+           <p class="cursor">'Up arrow' key to select  next card
+           </p>
+           <p class="cursor">'Down arrow' key to select  previous card
+        </p>
+        <p>Max rows -used for configurable row  
+        </p>
+        </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row ">
+    <div *ngFor="let card of CardsList; let i = index" class="col-md-4 cursor">
+      <mat-card (click)="SelectCard(i)" [ngClass]="{'active': Activeindex === i}" class="matcard cursor">
+          <p *ngIf="Activeindex === i" class="textalign">Active Card-{{i+1}}</p>
+          <p *ngIf="Activeindex != i" class="textalign blkcolor">{{i+1}}</p></mat-card>
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="row">
+
+    <div class="col-md-5"></div>
+    <div class="col-md-1"><button matTooltip="Click or press 'Down arrow' key to select previous  card"
+        class="primary" mat-raised-button (click)="onPrevNxtClick('PREV')">
+        <i class="mdi mdi-chevron-left cursor ficon">Prev</i>
+      </button></div>
+    <div class="col-md-1">
+      <button class="primary" matTooltip="Click or press 'Up arrow' key to select  next card"
+        mat-raised-button (click)="onPrevNxtClick('NXT')">Next
+        <i class="mdi mdi-chevron-right cursor ficon"></i>
+      </button>
+
+    </div>
+    <div class="col-md-5">
+    </div>
+  </div>
+</div>
